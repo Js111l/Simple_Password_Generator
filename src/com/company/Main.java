@@ -11,7 +11,7 @@ public class Main {
     {
 
 
-        System.out.println("Długość hasła: ");
+        System.out.println("Ilość znaków: ");
 
         Scanner scanner=new Scanner(System.in);
 
@@ -19,7 +19,7 @@ public class Main {
 
         if(m<8)
         {
-            System.out.println("Hasło powinno się składać z conajmniej 8 znaków!");
+            System.out.println("Hasło powinno się składać z co najmniej 8 znaków!");
         }
 
 
@@ -53,7 +53,7 @@ public class Main {
 
 }
 
- class lower{
+ class Lower{
 
   private static String lowercase="abcdefghijklmnopqrstuvwxyz";
   private static Random random=new Random();
@@ -61,7 +61,7 @@ public class Main {
         return lowercase.charAt(random.nextInt(25));
     }
 }
-class upper{
+class Upper{
 
  private   static String uppercase="abcdefghijklmnopqrstuvwxyz".toUpperCase();
   private static Random random=new Random();
@@ -69,7 +69,7 @@ class upper{
         return uppercase.charAt(random.nextInt(25));
     }
 }
-class chars{
+class Chars{
 
     private static
     char [] specialchars=
@@ -86,7 +86,7 @@ class chars{
 }
 
 
-class numbers{
+class Numbers{
 
    private static String numbers="0123456789";
 
@@ -107,19 +107,19 @@ class RandMethod
         if(n==0)
         {
 
-            return lower.metoda();
+            return Lower.metoda();
         }
         if(n==1)
     {
-        return upper.metoda();
+        return Upper.metoda();
     }
         if(n==2)
         {
-            return chars.metoda();
+            return Chars.metoda();
         }
         if(n==3)
         {
-            return (char)numbers.metoda();
+            return (char)Numbers.metoda();
         }
 
         return 0;
