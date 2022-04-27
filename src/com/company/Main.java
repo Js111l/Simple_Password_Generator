@@ -58,7 +58,7 @@ public class Main {
   private static String lowercase="abcdefghijklmnopqrstuvwxyz";
   private static Random random=new Random();
    static char metoda(){
-        return lowercase.charAt(random.nextInt(27));
+        return lowercase.charAt(random.nextInt(25));
     }
 }
 class upper{
@@ -66,7 +66,7 @@ class upper{
  private   static String uppercase="abcdefghijklmnopqrstuvwxyz".toUpperCase();
   private static Random random=new Random();
    static char metoda(){
-        return uppercase.charAt(random.nextInt(26));
+        return uppercase.charAt(random.nextInt(25));
     }
 }
 class chars{
@@ -80,7 +80,7 @@ class chars{
   static private  Random random = new Random();
 
   static char metoda(){
-        return specialchars[random.nextInt(30)];
+        return specialchars[random.nextInt(28)];
     }
 
 }
@@ -93,7 +93,7 @@ class numbers{
   private static Random random = new Random();
 
    static int metoda(){
-        return numbers.charAt(random.nextInt(10));
+        return numbers.charAt(random.nextInt(9));
     }
 
 }
