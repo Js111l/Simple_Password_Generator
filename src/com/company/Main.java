@@ -14,8 +14,7 @@ public class Main {
         System.out.println("Ilość znaków: ");
         Scanner scanner=new Scanner(System.in);
         int m = scanner.nextInt();
-
-
+        
 Object[] pass=new Object[m];
 
         if(m<8)
@@ -32,21 +31,17 @@ Object[] pass=new Object[m];
         System.out.println("Czy chcesz uwzględnić cyfry?: Y/N");
         Scanner scannerCyfry=new Scanner(System.in);
         String cyfry = scannerCyfry.nextLine();
-        System.out.println("Czy chcesz uwzględnić symbole?: Y/N");
+        System.out.println("Czy chcesz znaki specjalne?: Y/N");
         Scanner scannerSymbole=new Scanner(System.in);
         String Symbole = scannerSymbole.nextLine();
 
 
-
-
         System.out.println("Twoje hasło: ");
-
-
 
         for (int i = 0; i < m; i++)
         {
 
-            pass[i] = RandMethod.Metoda(Metoda.createPassword(duzeLitery,małeLitery, cyfry,Symbole));
+            pass[i] = RandMethod.Metoda(Password.createRandomNum(duzeLitery,małeLitery, cyfry,Symbole));
         }
 
         StringBuilder stringBuilder = new StringBuilder();
@@ -55,15 +50,24 @@ Object[] pass=new Object[m];
         ) {
             stringBuilder.append(i);
         }
+
         System.out.println(stringBuilder);
 
-
+        if(stringBuilder.length()<8){
+            System.out.println("Twoje hasło jest słabe...");
+        }
+        if(stringBuilder.length()>=12){
+            System.out.println("Twoje hasło jest silne!");
+        }
+        if(stringBuilder.length()>128){
+            System.out.println("Twoje hasło jest super silne!");
+        }
 
 
     }
 }
 
-class Metoda
+class Password
 {
 static int duze(String duze)
 {
@@ -90,57 +94,33 @@ static int symb(String symb){
     }
     return 0;
 }
-static int createPassword(String duże,String małe,String cyfry1,String symb)
+static int createRandomNum(String duże,String małe,String cyfry1,String symb)
 {
-
-
-
 
         int randomNumb =(int) (5*Math.random());
 
-
-
-        while (randomNumb == Metoda.male(małe) || randomNumb== Metoda.duze(duże) || randomNumb== Metoda.cyfry(cyfry1) || randomNumb==Metoda.symb(symb) || randomNumb==0)
+        while (randomNumb == Password.male(małe) || randomNumb== Password.duze(duże) || randomNumb== Password.cyfry(cyfry1) || randomNumb==Password.symb(symb) || randomNumb==0)
         {
             randomNumb = (int)(5*Math.random());
         }
-
        return randomNumb;
-
     }
 }
 
-/*
-class  create(int m,int rand,)
-{
-     for (int i = 0; i < m; i++)
-    {
-        pass[i] = RandMethod.Metoda(randomNumb);
-    }
-
-    StringBuilder stringBuilder = new StringBuilder();
-
-    for (var i : pass
-    ) {
-        stringBuilder.append(i);
-    }
-    System.out.println(stringBuilder);
-}
-*/
-class lower{
+class Lower{
     static String lowercase="abcdefghijklmnopqrstuvwxyz";
     public static char metoda(){
         return lowercase.charAt((int)(26*Math.random()));
     }
 }
-class upper{
-     static String uppercase="abcdefghijklmnopqrstuvwxyz".toUpperCase();
+class Upper{
+    static String uppercase="abcdefghijklmnopqrstuvwxyz".toUpperCase();
     public static char metoda()
     {
         return uppercase.charAt((int)(26*Math.random()));
     }
 }
-class chars{
+class Chars{
     static
     char [] specialchars=
             {
@@ -151,7 +131,7 @@ class chars{
         return specialchars[(int)(29*Math.random())];
     }
 }
-class numbers{
+class Numbers{
     static String numbers="0123456789";
     public static int metoda(){
         return numbers.charAt((int)( 10*Math.random()));
@@ -165,19 +145,19 @@ class RandMethod
     {
         if(n==1)
         {
-            return lower.metoda();
+            return Lower.metoda();
         }
         if(n==2)
         {
-            return upper.metoda();
+            return Upper.metoda();
         }
         if(n==3)
         {
-            return chars.metoda();
+            return Chars.metoda();
         }
         if(n==4)
         {
-            return (char)numbers.metoda();
+            return (char)Numbers.metoda();
         }
         return 0;
     }
