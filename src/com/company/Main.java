@@ -99,7 +99,7 @@ static int createPassword(String duże,String małe,String cyfry1,String symb)
         int randomNumb =(int) (5*Math.random());
 
 
-    // TODO: 28.04.2022
+
         while (randomNumb == Metoda.male(małe) || randomNumb== Metoda.duze(duże) || randomNumb== Metoda.cyfry(cyfry1) || randomNumb==Metoda.symb(symb) || randomNumb==0)
         {
             randomNumb = (int)(5*Math.random());
