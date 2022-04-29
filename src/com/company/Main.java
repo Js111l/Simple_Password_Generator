@@ -31,7 +31,7 @@ Object[] pass=new Object[m];
         System.out.println("Czy chcesz uwzględnić cyfry?: Y/N");
         Scanner scannerCyfry=new Scanner(System.in);
         String cyfry = scannerCyfry.nextLine();
-        System.out.println("Czy chcesz znaki specjalne?: Y/N");
+        System.out.println("Czy chcesz uwzględnić znaki specjalne?: Y/N");
         Scanner scannerSymbole=new Scanner(System.in);
         String Symbole = scannerSymbole.nextLine();
 
